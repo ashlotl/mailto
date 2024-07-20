@@ -1,21 +1,20 @@
 <!DOCTYPE HTML>
 <html>
   <title>mailto redirection</title>
-  <script>
-    let params = new URLSearchParams(window.location.search);
-    let email = params.get("e");
-    
-    document.addEventListener("load", () => {
-      let linkElement = document.getElementById("mail-link");
-      linkElement.href="mailto:" + email;
-      linkElement.innerHTML = email;
-    });
-    
-  </script>
+  
   <body>
     <p>You are being redirected to a mailto link. Click the link below if nothing happens.
       <br />
       <a id="mail-link"></a>
     </p>
+
+    <script>
+    let params = new URLSearchParams(window.location.search);
+    let email = params.get("e");
+
+    let linkElement = document.getElementById("mail-link");
+    linkElement.href="mailto:" + email;
+    linkElement.innerHTML = email;    
+  </script>
   </body>
 </html>
