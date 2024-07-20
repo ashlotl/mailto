@@ -14,7 +14,9 @@
 
     let linkElement = document.getElementById("mail-link");
     linkElement.href="mailto:" + email;
-    linkElement.innerHTML = email;    
+    linkElement.innerHTML = email;
+
+    window.location.href = "mailto:" + email;
   </script>
   </body>
 </html>
