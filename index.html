@@ -1,0 +1,23 @@
+<DOCTYPE HTML>
+<html>
+  <title>mailto redirection</title>
+  <script>
+    let split = window.location.href.split("#");
+    if (split.length!=1) {
+      alert("link is malformed!");
+    } else {
+      let email = split[1];
+      document.addEventListener("load", () => {
+        let linkElement = document.getElementById("mail-link");
+        linkElement.href="mailto:" + email;
+        linkElement.innerHTML = email;
+      });
+    }
+  </script>
+  <body>
+    <p>You are being redirected to a mailto link. Click the link below if nothing happens.
+      <br />
+      <a id="mail-link"></a>
+    </p>
+  </body>
+</html>
